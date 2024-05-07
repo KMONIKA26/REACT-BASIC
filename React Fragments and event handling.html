@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Component</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Define a functional component called App
+    const App = () => {
+      // Define a function that will be called when the button is clicked
+      const handleClick = () => {
+        alert('Hello'); // Display an alert with the message 'Hello'
+      };
+
+      // Return JSX elements
+      return (
+        <>
+          {/* React fragment to wrap multiple elements without adding extra nodes to the DOM */}
+          <p>React is a JavaScript library</p>
+          {/* Main div with a class name */}
+          <div className="main">
+            <p>Click the below button to alert 'Hello'</p>
+            {/* Button with an onClick event handler */}
+            <button onClick={handleClick}>Alert Hello</button>
+          </div>
+        </>
+      );
+    };
+
+    // Render the App component inside the root div
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
